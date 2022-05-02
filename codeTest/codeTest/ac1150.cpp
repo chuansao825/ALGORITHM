@@ -15,7 +15,6 @@ struct node {
 	node(int x,ll y):id(x),w(y){}
 };
 
-
 const int MAX = 105;
 const ll INF = LLONG_MAX;
 const int MOD = 100000;
@@ -30,9 +29,6 @@ int uf[MAX] = { 0 };
 //用于DFS
 bool visit[MAX] = { false };
 
-
-
-
 //储存两个集合的根节点编号
 int root1, root2;
 //判别并查集中a和b是否在同一个union中
@@ -43,7 +39,6 @@ bool connect(int a, int b) {
 	root2 = b;
 	return a == b;
 }
-
 
 //快速幂，求(a^b)%MOD
 ll qmi(ll a, ll b) {
@@ -57,7 +52,6 @@ ll qmi(ll a, ll b) {
 
 	return ans;
 }
-
 
 void input() {
 	cin >> n >> m;
@@ -81,7 +75,6 @@ void input() {
 	}
 }
 
-
 //用DFS求解
 void DFS(int id,ll dist) {
 	visit[id] = true;
@@ -95,8 +88,6 @@ void DFS(int id,ll dist) {
 		
 	}
 }
-
-
 
 int main(void) {
 	input();

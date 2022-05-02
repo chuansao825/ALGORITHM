@@ -1,22 +1,19 @@
-﻿生成启动时间为 2022-04-30 22:27:57。
-日志记录详细程度设置为: Normal。     1>项目“D:\算法笔记学习\codeTest\codeTest\codeTest.vcxproj”在节点 2 上(ClCompile 个目标)。
+﻿生成启动时间为 2022-05-02 16:41:59。
+日志记录详细程度设置为: Normal。     1>项目“D:\算法笔记学习\codeTest\codeTest\codeTest.vcxproj”在节点 2 上(Build 个目标)。
      1>InitializeBuildStatus:
-         正在创建“Debug\codeTest.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+         正在对“Debug\codeTest.tlog\unsuccessfulbuild”执行 Touch 任务。
        ClCompile:
-         D:\VS\IDE\VC\Tools\MSVC\14.29.30037\bin\HostX86\x86\CL.exe /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc142.pdb" /external:W3 /Gd /TP /analyze- /FC /errorReport:prompt ac1150.cpp
-         ac1150.cpp
-     1>D:\算法笔记学习\codeTest\codeTest\ac1150.cpp(117,19): warning C4018: “<”: 有符号/无符号不匹配
-     1>D:\算法笔记学习\codeTest\codeTest\ac1150.cpp(119,9): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
-     1>已完成生成项目“D:\算法笔记学习\codeTest\codeTest\codeTest.vcxproj”(ClCompile 个目标)的操作。
+         所有输出均为最新。
+       Link:
+         D:\VS\IDE\VC\Tools\MSVC\14.29.30037\bin\HostX86\x86\link.exe /ERRORREPORT:PROMPT /OUT:"D:\算法笔记学习\codeTest\Debug\codeTest.exe" /INCREMENTAL /ILK:"Debug\codeTest.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\算法笔记学习\codeTest\Debug\codeTest.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\算法笔记学习\codeTest\Debug\codeTest.lib" /MACHINE:X86 Debug\ac2681_p.obj
+         codeTest.vcxproj -> D:\算法笔记学习\codeTest\Debug\codeTest.exe
+       FinalizeBuildStatus:
+         正在删除文件“Debug\codeTest.tlog\unsuccessfulbuild”。
+         正在对“Debug\codeTest.tlog\codeTest.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\算法笔记学习\codeTest\codeTest\codeTest.vcxproj”(Build 个目标)的操作。
 
 已成功生成。
-
-       “D:\算法笔记学习\codeTest\codeTest\codeTest.vcxproj”(ClCompile 目标) (1) ->
-       (ClCompile 目标) -> 
-         D:\算法笔记学习\codeTest\codeTest\ac1150.cpp(117,19): warning C4018: “<”: 有符号/无符号不匹配
-         D:\算法笔记学习\codeTest\codeTest\ac1150.cpp(119,9): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
-
-    2 个警告
+    0 个警告
     0 个错误
 
-已用时间 00:00:00.61
+已用时间 00:00:00.47
