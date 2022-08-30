@@ -19,7 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pat1163.cpp" />
+    <ClInclude Include="model.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pat1153.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

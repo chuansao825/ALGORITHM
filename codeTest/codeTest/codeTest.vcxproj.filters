@@ -15,7 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pat1163.cpp">
+    <ClInclude Include="model.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pat1153.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
