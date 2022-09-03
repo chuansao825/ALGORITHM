@@ -1,88 +1,95 @@
 #include<iostream>
-#include<cstdio>
+#include<string>
 #include<cstring>
+#include<cstdio>
 #include<vector>
+#include<set>
+#include<unordered_map>
+#include<queue>
+#include<stack>
 #include<algorithm>
-
+#include<cmath>
 using namespace std;
 
-//节点
+
 struct node {
-	int id;
-	int w;
-	//子节点，按照w值降序存储
 	vector<int> child;
+	node(vector<int> b):child(b){}
+	node(){}
 };
-
 const int MAX = 105;
-int N, M, S;
-struct node tree[MAX];
-//储存路径
-vector<vector<int>> path;
-
+int N,M,W;
+int weight[MAX] = { 0 };
+node tree[MAX];
 void input() {
-	cin >> N >> M >> S;
-	for (int i = 0; i < N; i++) {
-		tree[i].id = i;
-		int w;	cin >> w;
-		tree[i].w = w;
-	}
-
-	for (int i = 0; i < M ; i++) {
-		int r, n;	cin >> r >> n;
-		for (int i = 0; i < n; i++) {
-			int c;	cin >> c;
-			tree[r].child.push_back(c);
+	cin >> N >> M >>W;
+	for (int i = 0; i < N; i++)
+		cin >> weight[i];
+	for (int i = 0; i < M; i++) {
+		int id,k;
+		cin >> id >> k;
+		vector<int> vec;
+		for (int j = 0; j < k; j++) {
+			int x; cin >> x;
+			vec.push_back(x);
 		}
+		tree[id] = node(vec);
 	}
 }
 
-//通过DFS求解，使用剪枝
-int len = 0;	//储存当前DFS到的路径的权重
-vector<int> cp;	//当前路径
-void DFS(int id) {
-	cp.push_back(tree[id].w);
-	//更新len
-	len += tree[id].w;
-
-	//递归边界判断--已经超出目标
-	if (len >= S && tree[id].child.size() > 0) {
-		cp.pop_back();
-		len -= tree[id].w;
+vector<vector<int>> result;
+vector<int> path;
+void DFS(int root,int w) {
+	w = w + weight[root];
+	//剪枝
+	if (w > W) {
 		return;
 	}
-	//递归边界判断--找到目标路径
-	if (len == S && tree[id].child.size() == 0) {
-		path.push_back(cp);
+
+	path.push_back(weight[root]);
+	//递归边界
+	if (tree[root].child.size() == 0) {
+		if (w == W)
+			result.push_back(path);
+		path.pop_back();
+		return;
 	}
 
-	for (int i = 0; i < tree[id].child.size(); i++) {
-		DFS(tree[id].child[i]);
+	vector<int>& vec = tree[root].child;
+	for (int i = 0; i < vec.size(); i++) {
+		DFS(vec[i],w);
 	}
-
-	cp.pop_back();
-	len -= tree[id].w;
-	return;
+	path.pop_back();
 }
-
-
-
 
 int main(void) {
 	input();
-	DFS(0);
-
-	//对路径排序
-	sort(path.begin(), path.end(), greater<vector<int>>());
-
-	for (int i = 0; i < path.size();i++) {
-		vector<int> p=path[i];
-		for (int i = 0; i < p.size(); i++) {
-			cout << p[i];
-			if (i == p.size() - 1)	cout << endl;
-			else    cout << " ";
+	DFS(0,0);
+	sort(result.begin(), result.end(), greater<vector<int>>());
+	for (auto it = result.begin(); it != result.end(); it++) {
+		vector<int> vec = *it;
+		for (int i = 0; i < vec.size(); i++) {
+			cout << vec[i];
+			if (i == vec.size() - 1)
+				cout << endl;
+			else
+				cout << " ";
 		}
 	}
-
-	return 0;
 }
+
+
+/*
+20 9 24
+10 2 4 3 5 10 2 18 9 7 2 2 1 3 12 1 8 6 2 2
+00 4 01 02 03 04
+02 1 05
+04 2 06 07
+03 3 11 12 13
+06 1 09
+07 2 08 10
+16 1 15
+13 3 14 16 17
+17 2 18 19
+
+*/

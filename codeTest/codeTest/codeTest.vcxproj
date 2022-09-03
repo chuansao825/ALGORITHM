@@ -22,7 +22,7 @@
     <ClInclude Include="model.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pat1153.cpp" />
+    <ClCompile Include="pat1053.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
